@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --bg: #1F2937;
+  --h1-color: #FFFFFF;
+  --support-text: #D5D4D8;
+  --text-color: #FFFFFF;
+  --label-color: #D5D4D8;
+  --card-bg: #273549;
+  --password-color: #55F991;
+  --limeGreen: #10B981;
+  --hr: #2F3E53;
+}
+
+body.light-mode {
+    --bg: #ECFDF5;
+    --h1-color: #111827;
+    --support-text: #6B7280;
+    --text-color: #FFFFFF;
+    --label-color: #2F3E53;
+    --card-bg: #273549; 
+    --password-color: #55F991;
+    --limeGreen: #10B981;
+    --hr: #2F3E53;
+  }
+  body{
+    padding: 2em 4em;
+    background-color: var(--bg);
+  }
+  .header-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 3em;
+    margin-bottom: 60px;
+  }
+  h1{
+    color: var(--h1-color);
+    line-height: 30px;
+  }
+ h1 span{
+    font-weight: normal;
+    font-size: 18px;
+    color: var(--password-color);
+ }
+ .search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+ }
+ .search-input{
+    padding: 6px 10px;
+    font-size: large;
+    border-radius: 4px;
+    color: var(--password-color);
+    background-color: var(--bg);
+    border: 1px solid var(--password-color);
+    
+ }
+ .search-btn{
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    background-color: var(--limeGreen);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+ }
+ .movies-container{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+ }
+
+ .no-results-p{
+   font-size: 20px;
+   color: var(--support-text);
+ }
+
+ .movie-card{
+    padding: 1em;
+    max-width: 360px;
+    background-color: var(--card-bg);
+    border-radius: 0.5em;
+ }
+
+ .movie-card p {
+    color: var(--text-color);
+ }
+ .movie-card h3{
+    color: var(--limeGreen);
+ }
+
+ .movie-card img{
+    width: 200px;
+ }
