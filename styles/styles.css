@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--text-color);
+}
+
+:root {
+   --bg: #FFFFFF;
+   --text-color: #151a22;
+   --white-grey: #eeecec;
+   --card-bg: #273549;
+   --password-color: #55F991;
+   --limeGreen: #10B981;
+
+}
+
+body.dark-mode{
+    --bg: #ECFDF5;
+    --support-text: #6B7280;
+    --text-color: #e7e7e7;
+    --label-color: #2F3E53;
+    --card-bg: #273549; 
+    --hr: #2F3E53;
+  }
+
+.wrapper{
+   padding: 1em;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   gap: 2em;
+}
+body{
+   background-color: var(--bg);
+}
+
+/* UTILITY */
+
+.container{
+   width: 100%;
+   margin: 0 auto;
+}
+
+.flex-col{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+/* DEFAULT*/
+.header{
+   gap: 1em;
+}
+
+input{
+   padding: 0.6em 1.2em;
+   background-color: var(--white-grey);
+   border: none;
+   border-radius: 1em;
+   font-size: 1rem;
+   color: var(--text-color);
+   font-weight: 400;
+}
+button{
+   padding: 0.8em;
+   color: var(--bg);
+   background-color: var(--limeGreen);
+   border: none;
+   border-radius: 0.5em;
+   font-weight: 600;
+   
+}
+
+img{
+   width: 100%;
+   border-radius: 1em;
+}
+
+.movies-section{
+   display: grid;
+   grid-template-columns: 300px;
+   grid-template-rows: repeat(auto, 400px);
+   justify-content: center;
+   
+}
+.movie-card{
+   
+}
+
+  /* MEDIA QUERIES */
+@media (min-width: 475px) {
+   .container{
+      max-width: 475px;
+   }
+   .movies-section{
+      grid-template-columns: repeat(2,200px);
+      grid-template-rows: repeat(auto, 400px);
+      gap: 1rem;
+   }
+}
+
+@media (min-width: 640px) {
+   .container{
+      max-width: 640px;
+   }
+   .movies-section{
+      grid-template-columns: repeat(3,180px);
+      grid-template-rows: repeat(auto, 400px);
+      gap: 1rem;
+   }
+}
+
+@media (min-width: 768px) {
+   .container{
+      max-width: 768px;
+   }
+   .movies-section{
+      grid-template-columns: repeat(3,230px);
+      grid-template-rows: repeat(auto, 400px);
+      gap: 1rem;
+   }
+}
+
+@media (min-width: 1024px) {
+   .container{
+      max-width: 1024px;
+   }
+   .movies-section{
+      grid-template-columns: repeat(3,240px);
+      grid-template-rows: repeat(auto, 400px);
+      gap: 1rem;
+   }
+}
+
+@media (min-width: 1260px) {
+   .container{
+      max-width: 1260px;
+   }
+
+   .movies-section{
+      grid-template-columns: repeat(4,260px);
+      grid-template-rows: repeat(auto, 400px);
+      gap: 1rem;
+   }
+}

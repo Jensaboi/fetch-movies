@@ -1,5 +1,5 @@
 const BASE_URL = "https://www.omdbapi.com/"
-const API_KEY = 'ENTER_YOUR_API_KEY'
+const API_KEY = 'YOUR API KEY GOES HERE'
 
 const searchInput = document.getElementById('search-input')
 
@@ -10,7 +10,6 @@ async function fetchData(query){
         
         if(!response.ok){ 
             throw new Error('Something is wrong with the API')
-
         } 
         const data = await response.json()
         
@@ -27,6 +26,7 @@ async function renderMovies(){
     moviesContainerEl.innerHTML = ''
     try{
         const data = await fetchData(searchInput.value)
+
         if(data === null){
             let noDataEl = document.createElement('div')
             noDataEl.innerHTML = `
@@ -35,32 +35,37 @@ async function renderMovies(){
             moviesContainerEl.appendChild(noDataEl)
             return
         }
+        console.log(data)
+
         data.forEach(movie=>{
             const movieCard = document.createElement('div')
             movieCard.classList.add('movie-card')
-            movieCard.innerHTML = `
-                <img alt="${movie.Title} poster">
-                <h3>${movie.Title}</h3>
-                <p>${movie.Year}</p>
-            `
-            const img = movieCard.querySelector('img')
+            const img = new Image()
             img.src = movie.Poster
-
+            img.alt = `${movie.Title} poster`
+            movieCard.appendChild(img)
+            const textBox = document.createElement('div')
+            textBox.classList = "movie-text"
+            textBox.innerHTML = `
+            <h3>${movie?.Title ?? 'Unknown'}</h3>
+            <p>${movie?.Year ?? 'Unknown'}</p>
+            `
+            movieCard.appendChild(textBox)
             img.onload = ()=>{
+                moviesContainerEl.appendChild(movieCard)
                 console.log("Image Loaded")
             }
             img.onerror = ()=>{
-                img.src = "/icons/notfound.avif"
+                console.log(movie.Poster + " failed to load")
             }
-
-            moviesContainerEl.appendChild(movieCard)
         })
+       
     }catch(error){
-
+        console.log(error)
     }
 }
 
 document.getElementById("search-btn").addEventListener("click", ()=>{
     renderMovies()
-    
+    searchInput.value = ''
 })

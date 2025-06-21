@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie site</title>
 </head>
 <body>
-    <header class="header-container">
+    <div class="wrapper">
+        <header class="header container flex-col">
+            <h1>Movie Lister</h1>
+            <div class="search-container">
+                <input class="search-input" type="search" placeholder="movie title..." id="search-input">
+                <button class="search-btn" id="search-btn">Search</button>
+            </div>
+        </header>
 
-        <h1>Movie posters<br><span class="header-sub-title">Search for you're movie</span></h1>
-
-        <div class="search-container">
-            <input class="search-input" type="search" placeholder="movie title..." id="search-input">
-            <button class="search-btn" id="search-btn">Search</button>
-        </div>
-    </header>
-    <div class="movies-container" id="movies-container">
+        <section class="container movies-section" id="movies-container">
+    
+        </section>
+        
     </div>
-    <script src="index.js" type="module"></script>
+    <script src="/src/index.js" type="module"></script>
 </body>
 </html>
