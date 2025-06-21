@@ -74,7 +74,7 @@ button{
    border: none;
    border-radius: 0.5em;
    font-weight: 600;
-   
+   cursor: pointer;
 }
 
 img{
@@ -87,9 +87,6 @@ img{
    grid-template-columns: 300px;
    grid-template-rows: repeat(auto, 400px);
    justify-content: center;
-   
-}
-.movie-card{
    
 }
 
@@ -142,7 +139,9 @@ img{
    .container{
       max-width: 1260px;
    }
-
+   h1{
+      font-size: 50px;
+   }
    .movies-section{
       grid-template-columns: repeat(4,260px);
       grid-template-rows: repeat(auto, 400px);
