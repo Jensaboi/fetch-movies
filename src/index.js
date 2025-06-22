@@ -5,17 +5,16 @@ const searchInput = document.getElementById("search-input");
 
 async function fetchData(query) {
     try {
-        const response = await fetch(
-            `${BASE_URL}?s=${query.trim()}&apikey=${API_KEY}&plot=short`,
-            { method: "GET" }
-        );
+        const response = await fetch(`${BASE_URL}?s=${query.trim()}&apikey=${API_KEY}&plot=short`, { method: "GET" });
 
         if (!response.ok) {
             throw new Error("Something is wrong with the API");
         }
+
         const data = await response.json();
 
         return data.Search ?? null;
+        
     } catch (error) {
         console.log(error);
     }
